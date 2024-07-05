@@ -1,0 +1,14 @@
+.container {
+    width: 120rem;
+    margin: 0 auto;
+}
+
+.isFlexCol {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.isMY32 {
+    margin-top: 4rem
+}

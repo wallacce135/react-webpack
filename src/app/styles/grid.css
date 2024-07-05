@@ -1,0 +1,21 @@
+.grid {
+    display: grid;
+    grid-gap: 4rem;
+    border: 1px solid black
+}
+
+.grid--isColumns-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid__item--isColumn-1st {
+    grid-column: 1;
+}
+
+.grid__item--isColumn-last {
+    grid-column: -2;
+}
+
+.grid__item--isRowSpan-4 {
+    grid-row: 1 / span 5
+}

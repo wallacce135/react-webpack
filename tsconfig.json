@@ -9,6 +9,7 @@
         "noEmit": false,
         "noImplicitAny": true,
         "noImplicitReturns": true,
+        "allowSyntheticDefaultImports": true,
         "jsx": "react-jsx",
         "outDir": "dist"
     },

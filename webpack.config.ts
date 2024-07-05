@@ -10,6 +10,8 @@ if(process.env.NODE_ENV === 'production') {
     mode = "production";
 }
 
+const isDev = process.env.NODE_ENV === "development"
+
 const plugins = [
     
     new CopyWebpackPlugin({
@@ -26,7 +28,9 @@ const plugins = [
             charset: "utf-8",
         },
         templateContent: `<div id="root"></div>`,
-    })
+    }),
+
+    new MiniCssExtractPlugin(),
 ]
 
 type MyConfiguration = Configuration & { devServer: unknown }
@@ -46,6 +50,13 @@ const config: MyConfiguration = {
     },
     module: {
         rules: [
+            {
+                test: /\.css/,
+                use: [
+                    isDev ? "style-loader": MiniCssExtractPlugin.loader,
+                    "css-loader"
+                ]
+            },
             {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
